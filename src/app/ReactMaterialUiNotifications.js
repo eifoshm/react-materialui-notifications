@@ -19,7 +19,7 @@ let notifications = [],
 count = 0,
 maxNotifications
 
-export default class ReactMaterialUiNotifications extends Component {
+export class Notifications extends Component {
   static propTypes = {
     /**
     * Desktop device or touch device
@@ -68,9 +68,9 @@ export default class ReactMaterialUiNotifications extends Component {
     notification.count = count
     tempNotifications.push(notification)
     // filter and keep only the open ones
-    tempNotifications = tempNotifications.filter(ReactMaterialUiNotifications.filterOpen)
+    tempNotifications = tempNotifications.filter(Notifications.filterOpen)
     // shuffle notifications and set actual notifications to the temp ones to update render
-    notifications = ReactMaterialUiNotifications.shuffleNotifications(tempNotifications)
+    notifications = Notifications.shuffleNotifications(tempNotifications)
     // update counter
     count++
   }
@@ -149,7 +149,7 @@ export default class ReactMaterialUiNotifications extends Component {
   }
 }
 
-class Notification extends Component {
+export class Notification extends Component {
   /**
   * these props are named after https://material.google.com/patterns/notifications.html#notifications-content
   */
