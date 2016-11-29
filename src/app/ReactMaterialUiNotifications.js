@@ -486,6 +486,7 @@ export class Notification extends Component {
               insetChildren={true}
               rightIconButton={desktopClose}
               innerDivStyle={listItemStyle}
+              hoverColor={"transparent"}
             />
             {timestampEl}
           </List>
